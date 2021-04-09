@@ -525,7 +525,9 @@ connect <- function(connectionDetails = NULL,
   if (dbms == "spark") {
     writeLines("Connecting using Spark driver")
     jarPath <- findPathToJar("^SparkJDBC.*\\.jar$", pathToDriver)
-    driver <- getJbcDriverSingleton("com.simba.spark.jdbc41.Driver", jarPath)
+    ##driver <- getJbcDriverSingleton("com.simba.spark.jdbc41.Driver", jarPath)
+    driver <- getJbcDriverSingleton("com.simba.spark.jdbc42.Driver", jarPath)
+    
     
     if (missing(connectionString) || is.null(connectionString)) {
       
